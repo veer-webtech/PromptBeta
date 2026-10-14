@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover, customize and copy powerful AI prompts across multiple categories.">
+  <title>PromptVault — Premium AI Prompt Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="#" class="logo"><span>✳</span> PromptVault</a>
+
+    <nav>
+      <a href="#library">Explore Prompts</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <a class="nav-button" href="#library">Get Started ↗</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="eyebrow">✦ THE ULTIMATE AI PROMPT LIBRARY</span>
+      <h1>Stop guessing.<br><span>Start prompting.</span></h1>
+      <p>
+        Discover powerful, ready-to-customize AI prompts for coding,
+        business, design, marketing, productivity and much more.
+      </p>
+      <a href="#library" class="primary-button">Explore the Library ↓</a>
+
+      <div class="stats">
+        <div><strong id="totalPrompts">24+</strong><span>Expert Prompts</span></div>
+        <div><strong id="totalCategories">8</strong><span>Categories</span></div>
+        <div><strong>1-Click</strong><span>Copy & Create</span></div>
+      </div>
+    </section>
+
+    <section class="library" id="library">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR CREATIVE TOOLKIT</span>
+          <h2>Explore the <span>Prompt Library.</span></h2>
+          <p>Find the right prompt for your next big idea.</p>
+        </div>
+        <span id="resultCount" class="result-count">24 prompts</span>
+      </div>
+
+      <div class="toolbar">
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search prompts, categories or keywords..."
+          aria-label="Search prompts"
+        >
+
+        <select id="sortSelect" aria-label="Sort prompts">
+          <option value="featured">Featured first</option>
+          <option value="az">Name: A–Z</option>
+        </select>
+      </div>
+
+      <div class="layout">
+        <aside class="sidebar">
+          <h3>Categories</h3>
+          <button class="category active" data-category="All">
+            ✦ All Prompts <span id="allCount">24</span>
+          </button>
+          <div id="categoryList"></div>
+
+          <div class="tip">
+            <strong>💡 Pro tip</strong>
+            <p>Replace words inside [brackets] with your own details.</p>
+          </div>
+        </aside>
+
+        <div class="results">
+          <div id="activeCategory" class="active-category">
+            Showing all prompts
+          </div>
+          <div id="promptGrid" class="prompt-grid"></div>
+
+          <div id="emptyState" class="empty-state" hidden>
+            <h3>No prompts found</h3>
+            <p>Try another search or select a different category.</p>
+            <button id="resetButton" class="primary-button">Reset Filters</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <span class="eyebrow">HOW IT WORKS</span>
+      <h2>Three steps. <span>Better results.</span></h2>
+
+      <div class="steps">
+        <article>
+          <span class="step-icon">⌕</span>
+          <h3>01. Discover</h3>
+          <p>Search the library or browse categories to find the right prompt.</p>
+        </article>
+        <article>
+          <span class="step-icon">✎</span>
+          <h3>02. Customize</h3>
+          <p>Adjust the instructions to match your goals and requirements.</p>
+        </article>
+        <article>
+          <span class="step-icon">▣</span>
+          <h3>03. Copy & Create</h3>
+          <p>Copy your prompt and use it in your preferred AI tool.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#" class="logo"><span>✳</span> PromptVault</a>
+    <p>Your next great idea starts with a better prompt.</p>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> PromptVault. All rights reserved.</span>
+      <span>Built by <strong>Chandraveer</strong> ✦</span>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    ✓ Prompt copied to clipboard!
+  </div>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-content">
+      <button id="closeModal" class="close-modal" aria-label="Close">×</button>
+      <span id="modalCategory" class="eyebrow"></span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+      <label for="promptText">PROMPT TEMPLATE</label>
+      <textarea id="promptText" rows="12"></textarea>
+      <div class="modal-footer">
+        <span id="wordCount">0 words</span>
+        <button id="copyModal" class="primary-button">Copy Prompt ▣</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
